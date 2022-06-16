@@ -1,1 +1,18 @@
+name: Run Tests Suite 
 
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Build app
+        id: build
+      
+      - name: Run tests
+      - name: Create artifact of test coverage
+        if: steps.build.outcome == 'success'
